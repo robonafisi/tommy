@@ -12,28 +12,26 @@ def page1(root, controller):
     signal.signal(signal.SIGTERM, lambda signum, frame: controller.quit())
     root.configure(bg='white')
     style = ttk.Style(root)
-
-# Configure the custom style for the 'Medicine Schedule' button
-style.configure('Green.TButton',
-font=('calibri', 40, 'bold'),
-borderwidth='4',
-background='light green')
-style.map('Green.TButton',
-foreground=[('pressed', 'black'), ('active', 'black')],
-background=[('pressed', '!disabled', 'dark green'), ('active', 'light green')]
-)
+    style.configure('Green.TButton',
+    font=('calibri', 40, 'bold'),
+    borderwidth='4',
+    background='light green')
+    style.map('Green.TButton',
+    foreground=[('pressed', 'black'), ('active', 'black')],
+    background=[('pressed', '!disabled', 'dark green'), ('active', 'light green')]
+    )
 
 # Create the 'Medicine Schedule' button using the custom style and place it at the bottom left
-med_schedule_button = ttk.Button(root, text="Medicine Schedule", command=lambda: controller.show_page(Page2), style='Green.TButton')
-med_schedule_button.place(x=20, y=660, width=700, height=240)
+    med_schedule_button = ttk.Button(root, text="Medicine Schedule", command=lambda: controller.show_page(Page2), style='Green.TButton')
+    med_schedule_button.place(x=20, y=660, width=700, height=240)
 # med_schedule_button.pack()
 
 # Configure the custom style for the 'Get Assistance' button
-style.configure('Yellow.TButton',
+    style.configure('Yellow.TButton',
 font=('calibri', 40, 'bold'),
 borderwidth='4',
 background='light yellow')
-style.map('Yellow.TButton',
+    style.map('Yellow.TButton',
 foreground=[('pressed', 'black'), ('active', 'black')],
 background=[('pressed', '!disabled', 'dark orange'), ('active', 'light yellow')]
 )
@@ -57,12 +55,7 @@ class Page1(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.controller = controller
         page1(self, controller)
-# button_page2 = tk.Button(self, text="Go to Page 2", command=lambda: controller.show_page(Page2))
-# button_page2.pack()
-# button_page2 = tk.Button(self, text="Go to Page 2", command=lambda: controller.show_page(Page2))
-# button_page2.pack()
-
-self.after(10000, self.move_to_page2)
+        self.after(10000, self.move_to_page2)
 # stay on this page for 10 seconds
 
 def move_to_page2(self):
