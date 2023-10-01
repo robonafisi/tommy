@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 import signal
-from hand_tracking import *
 
 from page1 import *
 from page3 import *
@@ -48,7 +47,6 @@ class Page2(tk.Frame):
         tk.Frame.__init__(self, parent)
         self.controller = controller
         page2(self, controller)
-        verify_pill_count(2)
         self.after(30000, self.move_to_page2)
 # stay on this page for 10 seconds
 
