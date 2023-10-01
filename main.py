@@ -13,7 +13,7 @@ import threading
 
 def call_move():
     time.sleep(10)
-    move_arm()
+    call_arm()
     
 
 class MainApplication(tk.Tk):

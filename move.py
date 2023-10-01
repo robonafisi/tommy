@@ -28,7 +28,7 @@ def schedule_moves():
     move_arm(0)
 
 # Initialize the Arm
-def move_arm():
+def call_arm():
     arm = Arm_Device()
 
     arm.Arm_serial_servo_write(1,0,500)
