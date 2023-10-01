@@ -37,13 +37,13 @@ background=[('pressed', '!disabled', 'dark orange'), ('active', 'light yellow')]
 )
 
 # Create the 'Get Assistance' button using the custom style and place it at the bottom right
-get_assistance_button = ttk.Button(root, text="Get Assistance", command=lambda: controller.show_page(Page2), style='Yellow.TButton')
-get_assistance_button.place(x=860, y=660, width=700, height=240)
+    get_assistance_button = ttk.Button(root, text="Get Assistance", command=lambda: controller.show_page(Page2), style='Yellow.TButton')
+    get_assistance_button.place(x=860, y=660, width=700, height=240)
 # get_assistance_button.pack()
 
 # Add the headline at the top left
-headline = tk.Label(root, text="Welcome, Michael!", font=('calibri', 75, 'bold'), bg='white')
-headline.place(x=25, y=15)
+    headline = tk.Label(root, text="Welcome, Michael!", font=('calibri', 75, 'bold'), bg='white')
+    headline.place(x=25, y=15)
 
 # Add logo
 logo = tk.PhotoImage(file="logo.png") # Replace 'logo.png' with your file
