@@ -28,7 +28,7 @@ style = ttk.Style()
 
 # Configure the custom style for the 'Don't want to take medicine' button
 style.configure('Green.TButton',
-font=('calibri', 40, 'bold'),
+font=('calibri', 75, 'bold'),
 borderwidth='4',
 background='light green')
 style.map('Green.TButton',
@@ -38,7 +38,7 @@ background=[('pressed', '!disabled', 'dark green'), ('active', 'light green')]
 
 # Create the 'Don't want to take medicine' button using the custom style and place it at the bottom left
 dont_want_button = ttk.Button(root, text="Don't want to take medicine", command=lambda: print("Don't want to take medicine pressed"), style='Green.TButton')
-dont_want_button.place(x=20, y=660, width=750, height=200)
+dont_want_button.place(x=125, y=660, width=700, height=240)
 
 # Configure the custom style for the 'Don't need to take medicine' button
 style.configure('Yellow.TButton',
@@ -52,10 +52,13 @@ background=[('pressed', '!disabled', 'dark orange'), ('active', 'light yellow')]
 
 # Create the 'Don't need to take medicine' button using the custom style and place it at the bottom right
 dont_need_button = ttk.Button(root, text="Don't need to take medicine", command=on_no_button_click, style='Yellow.TButton')
-dont_need_button.place(x=800, y=660, width=750, height=200)
+dont_need_button.place(x=1025, y=660, width=700, height=240)
+
+sub_heading = tk.Label(root, text="You chose No", font=('calibri', 75, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
+sub_heading.place(x=10, y=10)
 
 # Add the 'sub_heading' label at the top left
-sub_heading = tk.Label(root, text="It's time for your medication, Michael.", font=('calibri', 40, 'bold'), bg='white')
+sub_heading = tk.Label(root, text="Please share why you cannot take the medicine.", font=('calibri', 40, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
 sub_heading.place(x=10, y=10)
 
 root.mainloop()
