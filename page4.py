@@ -38,7 +38,7 @@ background=[('pressed', '!disabled', 'dark green'), ('active', 'light green')]
 
 logo = tk.PhotoImage(file="cry.png")  # Replace 'logo.png' with your file
 logo_label = tk.Label(root, image=logo, bg='white')
-logo_label.place(x=1300, y=50)  # Adjust the x and y coordinates as needed
+logo_label.place(x=900, y=50)  # Adjust the x and y coordinates as needed
 
 
 # Create the 'Don't want to take medicine' button using the custom style and place it at the bottom left
