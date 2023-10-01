@@ -52,7 +52,7 @@ no_button.place(x=1025, y=660, width=700, height=240)
 
 # Add the 'sub_heading' label at the top left
 sub_heading = tk.Label(root, text="Michael, time for your medication: ", font=('calibri', 75, 'bold'), bg='white', justiify=tk.LEFT, wraplength=
-sub_heading.place(x=10, y=10)
+sub_heading.place(x=10, y=10))
 
 # Add the '[MEDICATION]' label to the left of the 'sub_heading' label
 medication_label = tk.Label(root, text="[<<X>> TABLETS OF <<MEDICATION>>]", font=('calibri', 75, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
