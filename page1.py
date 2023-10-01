@@ -25,31 +25,15 @@ class Page1(tk.Frame):
         med_schedule_button = ttk.Button(self, text="Medicine Schedule", command=lambda: controller.show_page(Page2), style='Green.TButton')
         med_schedule_button.place(x=20, y=660, width=700, height=240)
 
-        # Configure the custom style for the 'Get Assistance' button
-        style.configure('Yellow.TButton',
-                        font=('calibri', 40, 'bold'),
-                        borderwidth='4',
-                        background='light yellow')
-        style.map('Yellow.TButton',
-                  foreground=[('pressed', 'black'), ('active', 'black')],
-                  background=[('pressed', '!disabled', 'dark orange'), ('active', 'light yellow')]
-                  )
+        # ... Other UI elements ...
 
-        # Create the 'Get Assistance' button using the custom style and place it at the bottom right
-        get_assistance_button = ttk.Button(self, text="Get Assistance", command=lambda: controller.show_page(Page2), style='Yellow.TButton')
-        get_assistance_button.place(x=860, y=660, width=700, height=240)
+        self.after(10000, self.move_to_page2)
 
-        # Add the headline at the top left
-        headline = tk.Label(self, text="Welcome, Michael!", font=('calibri', 75, 'bold'), bg='white')
-        headline.place(x=25, y=15)
+    def show(self):
+        self.pack()
 
-        # Add logo
-        # Replace 'logo.png' with your file path
-        logo = tk.PhotoImage(file="logo.png")
-        logo_label = tk.Label(self, image=logo, bg='white')
-        logo_label.place(x=1300, y=50)
-
-        self.after(10000, self.move_to_page2)  # Stay on this page for 10 seconds
+    def hide(self):
+        self.pack_forget()
 
     def move_to_page2(self):
         self.controller.show_page(Page2)
