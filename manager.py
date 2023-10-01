@@ -21,8 +21,8 @@ class MainApp:
         self.pages[Page1] = Page1(self.container, self)
         self.pages[Page2] = Page2(self.container, self)
         self.pages[Page3] = Page3(self.container, self)
-        self.pages[Page4] = Page4(self.container, self)
-        self.pages[Page5] = Page5(self.container, self)
+        # self.pages[Page4] = Page4(self.container, self)
+        # self.pages[Page5] = Page5(self.container, self)
 
         # Show the initial page
         self.show_page(Page1)

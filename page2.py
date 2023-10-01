@@ -37,8 +37,8 @@ class Page2(tk.Frame):
                   )
 
         # Create the 'Get Assistance' button using the custom style and place it at the bottom right
-        get_assistance_button = ttk.Button(self, text="Get Assistance", command=lambda: controller.show_page(Page4), style='Yellow.TButton')
-        get_assistance_button.place(x=1025, y=660, width=700, height=240)
+        # get_assistance_button = ttk.Button(self, text="Get Assistance", command=lambda: controller.show_page(Page4), style='Yellow.TButton')
+        # get_assistance_button.place(x=1025, y=660, width=700, height=240)
 
         # Add the headline at the top left
         headline = tk.Label(self, text="Michael, 30 mins until your next dose of Melatonin", font=('calibri', 75, 'bold'), bg='white',justify=tk.LEFT, wraplength=1850)
