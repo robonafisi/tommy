@@ -20,10 +20,10 @@ root.attributes("-fullscreen", True)
 
 # Add the 'sub_heading' label at the top left
 sub_heading = tk.Label(root, text="Michael, Congratulations!!", font=('calibri', 80, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
-sub_heading.place(x=10, y=200)
+sub_heading.place(x=10, y=10)
 
 # Display text indicating the number of tablets taken
-tablets_taken = tk.Label(root, text="You have taken 4 tablets of Melatonin!\nWell done!!", font=('calibri', 40, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
-tablets_taken.place(x=10, y=140)
+tablets_taken = tk.Label(root, text="You have taken 4 tablets of Melatonin!\nWell done!!", font=('calibri', 60, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
+tablets_taken.place(x=10, y=250)
 
 root.mainloop()
