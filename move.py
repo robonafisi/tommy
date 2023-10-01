@@ -32,7 +32,7 @@ def move_main():
     arm = Arm_Device()
 
     arm.Arm_serial_servo_write(1,0,500)
-    time.sleep(20)
+    time.sleep(30)
 
     # Start the scheduled arm movements in a separate thread
     t = threading.Thread(target=schedule_moves, args=(arm,))
