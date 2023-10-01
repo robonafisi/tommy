@@ -7,9 +7,13 @@ from page3 import *
 from page4 import *
 from page5 import *
 from page6 import *
+import time
+from move import *
+import threading
 
 def call_move():
-    sleep(10)
+    time.sleep(10)
+    move_main()
     
     
 
@@ -35,7 +39,10 @@ class MainApplication(tk.Tk):
             page.grid(row=0, column=0, sticky="nsew")
 
         # Show the initial page
+        t = threading.Thread(target=call_move)
+        t.start()
         self.show_page(Page1)
+
 
     def show_page(self, page_class):
         # Hide the current page

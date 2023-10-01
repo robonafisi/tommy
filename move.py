@@ -28,14 +28,15 @@ def schedule_moves():
     move_arm(0)
 
 # Initialize the Arm
-arm = Arm_Device()
+def move_main():
+    arm = Arm_Device()
 
-arm.Arm_serial_servo_write(1,0,500)
-time.sleep(.5)
+    arm.Arm_serial_servo_write(1,0,500)
+    time.sleep(.5)
 
-# Start the scheduled arm movements in a separate thread
-t = threading.Thread(target=schedule_moves)
-t.start()
+    # Start the scheduled arm movements in a separate thread
+    t = threading.Thread(target=schedule_moves)
+    t.start()
 
-# The main thread remains free here
-print("Main thread is free!")
+    # The main thread remains free here
+    print("Main thread is free!")
