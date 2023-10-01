@@ -9,22 +9,23 @@ def signal_handler(signum, frame):
 signal.signal(signal.SIGINT, signal_handler)
 signal.signal(signal.SIGTERM, signal_handler)
 
-# Create the main window
-root = tk.Tk()
-root.title("Inactivity Warning")  # Updated title
-root.geometry("1600x960")
-root.configure(bg='white')
+def page6():
+    # Create the main window
+    root = tk.Tk()
+    root.title("Inactivity Warning")  # Updated title
+    root.geometry("1600x960")
+    root.configure(bg='white')
 
-# Make the program run in full screen
-root.attributes("-fullscreen", True)
+    # Make the program run in full screen
+    root.attributes("-fullscreen", True)
 
-# Add the 'sub_heading' label at the top left
-sub_heading = tk.Label(root, text="Inactivity Warning!!", font=('calibri', 80, 'bold'), bg='white')
-sub_heading.place(x=10, y=10)
+    # Add the 'sub_heading' label at the top left
+    sub_heading = tk.Label(root, text="Inactivity Warning!!", font=('calibri', 80, 'bold'), bg='white')
+    sub_heading.place(x=10, y=10)
 
-# Display text indicating the inactivity warning
-warning_text = tk.Label(root, text="""Due to extended inactivity, we are now contacting your chosen\nemergency contact on your behalf. This is for your well being.""",
-font=('calibri', 60, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
-warning_text.place(x=10, y=250)
+    # Display text indicating the inactivity warning
+    warning_text = tk.Label(root, text="""Due to extended inactivity, we are now contacting your chosen\nemergency contact on your behalf. This is for your well being.""",
+    font=('calibri', 60, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
+    warning_text.place(x=10, y=250)
 
-root.mainloop()
+    root.mainloop()
