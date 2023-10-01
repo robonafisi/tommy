@@ -7,66 +7,59 @@ from page3 import *
 from page4 import *
 
 def page2(root, controller):
-    # Bind the signal handler
     signal.signal(signal.SIGINT, lambda signum, frame: controller.quit())
     signal.signal(signal.SIGTERM, lambda signum, frame: controller.quit())
 
-    # Create the main window
-    # root.title("Michael, 30 mins until your next dose of Melatonin")  # Updated title
-    # root.geometry("800x480")
-    root.configure(bg='white')
+# Create the main window
+# root.title("Michael, 30 mins until your next dose of Melatonin") # Updated title
+# root.geometry("800x480")
+root.configure(bg='white')
 
-    # Make the program run in full screen
-    # root.attributes("-fullscreen", True)
+# Make the program run in full screen
+# root.attributes("-fullscreen", True)
 
-    # Create a style object
-    style = ttk.Style(root)
+# Create a style object
+style = ttk.Style(root)
 
-    # Configure the custom style for the 'Medicine Schedule' button
-    style.configure('Green.TButton',
-    font=('calibri', 40, 'bold'),
-    borderwidth='4',
-    background='light green')
-    style.map('Green.TButton',
-    foreground=[('pressed', 'black'), ('active', 'black')],
-    background=[('pressed', '!disabled', 'dark green'), ('active', 'light green')]
-    )
+# Configure the custom style for the 'Medicine Schedule' button
+style.configure('Green.TButton',
+font=('calibri', 40, 'bold'),
+borderwidth='4',
+background='light green')
+style.map('Green.TButton',
+foreground=[('pressed', 'black'), ('active', 'black')],
+background=[('pressed', '!disabled', 'dark green'), ('active', 'light green')]
+)
 
-    # Create the 'Medicine Schedule' button using the custom style and place it at the bottom left
-    med_schedule_button = ttk.Button(root, text="Medicine Schedule", command=lambda: controller.show_page(Page1), style='Green.TButton')
-    med_schedule_button.place(x=125, y=660, width=700, height=240)
+# Create the 'Medicine Schedule' button using the custom style and place it at the bottom left
+med_schedule_button = ttk.Button(root, text="Medicine Schedule", command=lambda: controller.show_page(Page1), style='Green.TButton')
+med_schedule_button.place(x=125, y=660, width=700, height=240)
 
-    # Configure the custom style for the 'Get Assistance' button
-    style.configure('Yellow.TButton',
-    font=('calibri', 40, 'bold'),
-    borderwidth='4',
-    background='light yellow')
-    style.map('Yellow.TButton',
-    foreground=[('pressed', 'black'), ('active', 'black')],
-    background=[('pressed', '!disabled', 'dark orange'), ('active', 'light yellow')]
-    )
+# Configure the custom style for the 'Get Assistance' button
+style.configure('Yellow.TButton',
+font=('calibri', 40, 'bold'),
+borderwidth='4',
+background='light yellow')
+style.map('Yellow.TButton',
+foreground=[('pressed', 'black'), ('active', 'black')],
+background=[('pressed', '!disabled', 'dark orange'), ('active', 'light yellow')]
+)
 
-    # Create the 'Get Assistance' button using the custom style and place it at the bottom right
-    get_assistance_button = ttk.Button(root, text="Get Assistance", command=lambda: controller.show_page(Page4), style='Yellow.TButton')
-    get_assistance_button.place(x=1025, y=660, width=700, height=240)
+# Create the 'Get Assistance' button using the custom style and place it at the bottom right
+get_assistance_button = ttk.Button(root, text="Get Assistance", command=lambda: controller.show_page(Page4), style='Yellow.TButton')
+get_assistance_button.place(x=1025, y=660, width=700, height=240)
 
-    # Add the headline at the top left
-    headline = tk.Label(root, text="Michael, 30 mins until your next dose of Melatonin", font=('calibri', 75, 'bold'), bg='white',justify=tk.LEFT, wraplength=1850)
-    headline.place(x=35, y=75)
+# Add the headline at the top left
+headline = tk.Label(root, text="Michael, 30 mins until your next dose of Melatonin", font=('calibri', 75, 'bold'), bg='white',justify=tk.LEFT, wraplength=1850)
+headline.place(x=35, y=75)
 
 class Page2(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         self.controller = controller
         page2(self, controller)
-       
-        # button_page1 = tk.Button(self, text="Go to Page 1", command=lambda: controller.show_page(Page1))
-        # button_page1.pack()
-        
-        # button_page4 = tk.Button(self, text="Go to Page 4", command=lambda: controller.show_page(Page4))
-        # button_page4.pack()
         self.after(10000, self.move_to_page2)
-        # stay on this page for 10 seconds 
+# stay on this page for 10 seconds
 
-    def move_to_page2(self):
-        self.controller.show_page(Page3)
+def move_to_page2(self):
+    self.controller.show_page(Page3)
