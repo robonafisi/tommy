@@ -58,5 +58,5 @@ class Page1(tk.Frame):
         self.after(10000, self.move_to_page2)
 # stay on this page for 10 seconds
 
-def move_to_page2(self):
-    self.controller.show_page(Page2)
+    def move_to_page2(self):
+        self.controller.show_page(Page2)
