@@ -10,12 +10,6 @@ def page3(root, controller):
     # Bind the signal handler
     signal.signal(signal.SIGINT, lambda signum, frame: controller.quit())
     signal.signal(signal.SIGTERM, lambda signum, frame: controller.quit())
-
-
-    # Create the main window
-    # root = tk.Tk()
-    # root.title("Michael, time for your medication")  # Updated title
-    # root.geometry("800x480")
     root.configure(bg='white')
 
     # Make the program run in full screen

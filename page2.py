@@ -9,17 +9,8 @@ from page4 import *
 def page2(root, controller):
     signal.signal(signal.SIGINT, lambda signum, frame: controller.quit())
     signal.signal(signal.SIGTERM, lambda signum, frame: controller.quit())
-
-# Create the main window
-# root.title("Michael, 30 mins until your next dose of Melatonin") # Updated title
-# root.geometry("800x480")
-root.configure(bg='white')
-
-# Make the program run in full screen
-# root.attributes("-fullscreen", True)
-
-# Create a style object
-style = ttk.Style(root)
+    root.configure(bg='white')
+    style = ttk.Style(root)
 
 # Configure the custom style for the 'Medicine Schedule' button
 style.configure('Green.TButton',
