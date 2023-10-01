@@ -19,8 +19,8 @@ root.configure(bg='pink')
 root.attributes("-fullscreen", True)
 
 logo = tk.PhotoImage(file="Tommy.png")  # Replace 'logo.png' with your file
-logo_label = tk.Label(root, image=logo, bg='white')
-logo_label.place(x=900, y=10)  # Adjust the x and y coordinates as needed
+logo_label = tk.Label(root, image=logo, bg='pink')
+logo_label.place(x=900, y=50)  # Adjust the x and y coordinates as needed
 
 # Add the 'sub_heading' label at the top left
 sub_heading = tk.Label(root, text="Michael, Congratulations!!", font=('calibri', 80, 'bold'), bg='pink', justify=tk.LEFT, wraplength=1850)
