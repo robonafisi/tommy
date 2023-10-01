@@ -51,7 +51,7 @@ def page3(root, controller):
     sub_heading.place(x=10, y=10)
 
     # Add the '[MEDICATION]' label to the left of the 'sub_heading' label
-    medication_label = tk.Label(root, text="[<<X>> TABLETS OF <<MEDICATION>>]", font=('calibri', 75, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
+    medication_label = tk.Label(root, text="2 TABLETS OF Melatonin", font=('calibri', 75, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
     medication_label.place(x=10, y=140)
 
 class Page3(tk.Frame):
