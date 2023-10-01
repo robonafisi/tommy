@@ -46,9 +46,9 @@ background=[('pressed', '!disabled', 'dark orange'), ('active', 'light yellow')]
     headline.place(x=25, y=15)
 
 # Add logo
-logo = tk.PhotoImage(file="logo.png") # Replace 'logo.png' with your file
-logo_label = tk.Label(root, image=logo, bg='white')
-logo_label.place(x=1300, y=50) # Adjust the x and y coordinates as needed
+    logo = tk.PhotoImage(file="logo.png") # Replace 'logo.png' with your file
+    logo_label = tk.Label(root, image=logo, bg='white')
+    logo_label.place(x=1300, y=50) # Adjust the x and y coordinates as needed
 
 class Page1(tk.Frame):
     def __init__(self, parent, controller):
