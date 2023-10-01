@@ -23,7 +23,7 @@ sub_heading = tk.Label(root, text="Inactivity Warning!!", font=('calibri', 80, '
 sub_heading.place(x=10, y=10)
 
 # Display text indicating the inactivity warning
-warning_text = tk.Label(root, text="""Due to extended inactivity, we are now contacting your chosen emergency contact on your behalf. This is for your well being.""",
+warning_text = tk.Label(root, text="""Due to extended inactivity, we are now contacting your chosen\nemergency contact on your behalf. This is for your well being.""",
 font=('calibri', 60, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
 warning_text.place(x=10, y=250)
 
