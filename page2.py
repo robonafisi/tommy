@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import signal
+from page3 import Page3
 
 class Page2(tk.Frame):
     def __init__(self, parent, controller):
