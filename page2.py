@@ -1,8 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from page1 import Page1
-from page3 import Page3
-from page4 import Page4
+import signal
 
 class Page2(tk.Frame):
     def __init__(self, parent, controller):
