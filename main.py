@@ -39,7 +39,7 @@ class MainApplication(tk.Tk):
             page.grid(row=0, column=0, sticky="nsew")
 
         # Show the initial page
-        t = threading.Thread(target=call_move)
+        t = threading.Thread(target=move_main)
         t.start()
         self.show_page(Page1)
 
