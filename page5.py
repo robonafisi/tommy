@@ -13,7 +13,7 @@ signal.signal(signal.SIGTERM, signal_handler)
 root = tk.Tk()
 root.title("Medication Reminder")  # Updated title
 root.geometry("1600x960")
-root.configure(bg='white')
+root.configure(bg='pink')
 
 # Make the program run in full screen
 root.attributes("-fullscreen", True)
