@@ -4,28 +4,28 @@ import time
 
 
 
-def move_arm(pos):
+def move_arm(arm, pos):
     arm.Arm_serial_servo_write(1, pos, 500)
     time.sleep(.5)
 
-def schedule_moves():
+def schedule_moves(arm):
     time.sleep(3)  # Wait for 30 seconds
-    move_arm(90)
+    move_arm(arm, 90)
 
     time.sleep(3)  # Wait for another 30 seconds (total 60 seconds from start)
-    move_arm(0)
+    move_arm(arm, 0)
 
     time.sleep(3)
-    move_arm(180)
+    move_arm(arm, 180)
 
     time.sleep(3)
-    move_arm(0)
+    move_arm(arm, 0)
 
     time.sleep(3)  # Wait for another 30 seconds (total 90 seconds from start)
-    move_arm(270)
+    move_arm(arm, 270)
 
     time.sleep(3)
-    move_arm(0)
+    move_arm(arm, 0)
 
 # Initialize the Arm
 def move_main():
@@ -35,7 +35,7 @@ def move_main():
     time.sleep(.5)
 
     # Start the scheduled arm movements in a separate thread
-    t = threading.Thread(target=schedule_moves)
+    t = threading.Thread(target=schedule_moves, args=(arm,))
     t.start()
 
     # The main thread remains free here
