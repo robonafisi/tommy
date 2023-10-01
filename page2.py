@@ -3,6 +3,7 @@ from tkinter import ttk
 import signal
 
 from page1 import *
+from page3 import *
 from page4 import *
 
 def page2(root, controller):
@@ -64,3 +65,8 @@ class Page2(tk.Frame):
         
         # button_page4 = tk.Button(self, text="Go to Page 4", command=lambda: controller.show_page(Page4))
         # button_page4.pack()
+        self.after(10000, self.move_to_page2)
+        # stay on this page for 10 seconds 
+
+    def move_to_page2(self):
+        self.controller.show_page(Page3)

@@ -1,7 +1,7 @@
 import tkinter as tk
 import signal
 
-from page2 import *
+from page1 import *
 
 # Handler to close the tkinter window when receiving a SIGINT or SIGTERM
 # def signal_handler(signum, frame):
@@ -43,4 +43,4 @@ class Page6(tk.Frame):
         # stay on this page for 5 seconds 
 
     def move_to_page2(self):
-        self.controller.show_page(Page2)
+        self.controller.show_page(Page1)
