@@ -18,7 +18,7 @@ root.configure(bg='pink')
 # Make the program run in full screen
 root.attributes("-fullscreen", True)
 
-logo = tk.PhotoImage(file="tommy.png")  # Replace 'logo.png' with your file
+logo = tk.PhotoImage(file="Tommy.png")  # Replace 'logo.png' with your file
 logo_label = tk.Label(root, image=logo, bg='white')
 logo_label.place(x=900, y=10)  # Adjust the x and y coordinates as needed
 
