@@ -2,26 +2,24 @@ import tkinter as tk
 from tkinter import ttk
 import signal
 
-# Handler to close the tkinter window when receiving a SIGINT or SIGTERM
-def signal_handler(signum, frame):
-    root.quit()
+from page1 import *
+from page4 import *
 
-def page2():
+def page2(root, controller):
     # Bind the signal handler
-    signal.signal(signal.SIGINT, signal_handler)
-    signal.signal(signal.SIGTERM, signal_handler)
+    signal.signal(signal.SIGINT, lambda signum, frame: controller.quit())
+    signal.signal(signal.SIGTERM, lambda signum, frame: controller.quit())
 
     # Create the main window
-    root = tk.Tk()
-    root.title("Michael, 30 mins until your next dose of Melatonin")  # Updated title
-    root.geometry("800x480")
+    # root.title("Michael, 30 mins until your next dose of Melatonin")  # Updated title
+    # root.geometry("800x480")
     root.configure(bg='white')
 
     # Make the program run in full screen
-    root.attributes("-fullscreen", True)
+    # root.attributes("-fullscreen", True)
 
     # Create a style object
-    style = ttk.Style()
+    style = ttk.Style(root)
 
     # Configure the custom style for the 'Medicine Schedule' button
     style.configure('Green.TButton',
@@ -34,7 +32,7 @@ def page2():
     )
 
     # Create the 'Medicine Schedule' button using the custom style and place it at the bottom left
-    med_schedule_button = ttk.Button(root, text="Medicine Schedule", command=lambda: print("Medicine Schedule pressed"), style='Green.TButton')
+    med_schedule_button = ttk.Button(root, text="Medicine Schedule", command=lambda: controller.show_page(Page1), style='Green.TButton')
     med_schedule_button.place(x=125, y=660, width=700, height=240)
 
     # Configure the custom style for the 'Get Assistance' button
@@ -48,11 +46,21 @@ def page2():
     )
 
     # Create the 'Get Assistance' button using the custom style and place it at the bottom right
-    get_assistance_button = ttk.Button(root, text="Get Assistance", command=lambda: print("Get Assistance pressed"), style='Yellow.TButton')
+    get_assistance_button = ttk.Button(root, text="Get Assistance", command=lambda: controller.show_page(Page4), style='Yellow.TButton')
     get_assistance_button.place(x=1025, y=660, width=700, height=240)
 
     # Add the headline at the top left
     headline = tk.Label(root, text="Michael, 30 mins until your next dose of Melatonin", font=('calibri', 75, 'bold'), bg='white',justify=tk.LEFT, wraplength=1850)
     headline.place(x=35, y=75)
 
-    root.mainloop()
+class Page2(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        self.controller = controller
+        page2(self, controller)
+       
+        # button_page1 = tk.Button(self, text="Go to Page 1", command=lambda: controller.show_page(Page1))
+        # button_page1.pack()
+        
+        # button_page4 = tk.Button(self, text="Go to Page 4", command=lambda: controller.show_page(Page4))
+        # button_page4.pack()

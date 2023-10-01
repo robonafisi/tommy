@@ -2,26 +2,27 @@ import tkinter as tk
 from tkinter import ttk
 import signal
 
-# Handler to close the tkinter window when receiving a SIGINT or SIGTERM
-def signal_handler(signum, frame):
-    root.quit()
+from page4 import *
+from page5 import *
 
-def page3():
+
+def page3(root, controller):
     # Bind the signal handler
-    signal.signal(signal.SIGINT, signal_handler)
-    signal.signal(signal.SIGTERM, signal_handler)
+    signal.signal(signal.SIGINT, lambda signum, frame: controller.quit())
+    signal.signal(signal.SIGTERM, lambda signum, frame: controller.quit())
+
 
     # Create the main window
-    root = tk.Tk()
-    root.title("Michael, time for your medication")  # Updated title
-    root.geometry("800x480")
+    # root = tk.Tk()
+    # root.title("Michael, time for your medication")  # Updated title
+    # root.geometry("800x480")
     root.configure(bg='white')
 
     # Make the program run in full screen
-    root.attributes("-fullscreen", True)
+    # root.attributes("-fullscreen", True)
 
     # Create a style object
-    style = ttk.Style()
+    style = ttk.Style(root)
 
     # Configure the custom style for the 'Okay' button
     style.configure('Green.TButton',
@@ -34,7 +35,7 @@ def page3():
     )
 
     # Create the 'Okay' button using the custom style and place it at the bottom left
-    okay_button = ttk.Button(root, text="Okay", command=lambda: print("Okay pressed"), style='Green.TButton')
+    okay_button = ttk.Button(root, text="Okay", command=lambda: controller.show_page(Page5), style='Green.TButton')
     okay_button.place(x=125, y=660, width=700, height=240)
 
     # Configure the custom style for the 'No' button
@@ -48,7 +49,7 @@ def page3():
     )
 
     # Create the 'No' button using the custom style and place it at the bottom right
-    no_button = ttk.Button(root, text="No", command=lambda: print("No pressed"), style='Yellow.TButton')
+    no_button = ttk.Button(root, text="No", command=lambda: controller.show_page(Page4), style='Yellow.TButton')
     no_button.place(x=1025, y=660, width=700, height=240)
 
     # Add the 'sub_heading' label at the top left
@@ -59,4 +60,14 @@ def page3():
     medication_label = tk.Label(root, text="[<<X>> TABLETS OF <<MEDICATION>>]", font=('calibri', 75, 'bold'), bg='white', justify=tk.LEFT, wraplength=1850)
     medication_label.place(x=10, y=140)
 
-    root.mainloop()
+class Page3(tk.Frame):
+    def __init__(self, parent, controller):
+        tk.Frame.__init__(self, parent)
+        self.controller = controller
+        page3(self, controller)
+        # # ok button --> page 5 
+        # button_page1 = tk.Button(self, text="Go to Page 5", command=lambda: controller.show_page(Page5))
+        # button_page1.pack()
+        # # no button --> page 4
+        # button_page4 = tk.Button(self, text="Go to Page 4", command=lambda: controller.show_page(Page4))
+        # button_page4.pack()
