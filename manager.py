@@ -7,32 +7,28 @@ class MainApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Main App")
-        
-        # Create UI elements for the main app
-        
-        # Buttons to switch between pages
-        self.page1_button = ttk.Button(root, text="Page 1", command=self.show_page1)
-        self.page2_button = ttk.Button(root, text="Page 2", command=self.show_page2)
-        
-        self.page1_button.pack()
-        self.page2_button.pack()
-        
-        # Initialize Page1 and Page2
-        self.page1 = Page1(root)
-        self.page2 = Page2(root)
 
-    def show_page1(self):
-        self.page2.hide()
-        self.page1.show()
+        # Create container frame to hold pages
+        self.container = tk.Frame(root)
+        self.container.pack(fill="both", expand=True)
 
-    def show_page2(self):
-        self.page1.hide()
-        self.page2.show()
+        self.pages = {}  # Dictionary to store page instances
 
-    def run(self):
-        self.root.mainloop()
+        # Initialize and add pages to the dictionary
+        self.pages[Page1] = Page1(self.container, self)
+        self.pages[Page2] = Page2(self.container, self)
+
+        # Show the initial page
+        self.show_page(Page1)
+
+    def show_page(self, page_class):
+        page = self.pages[page_class]
+        page.show()
+        for other_page_class, other_page in self.pages.items():
+            if other_page_class != page_class:
+                other_page.hide()
 
 if __name__ == "__main__":
     root = tk.Tk()
     app = MainApp(root)
-    app.run()
+    root.mainloop()
